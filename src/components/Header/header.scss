@@ -1,0 +1,48 @@
+@import '../../resources/colors.scss';
+@import '../../resources/partials.scss';
+
+.header-container {
+  width: 90%;
+  height: 400px;
+  background: url('../../img/kill-bill.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 15%;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+.header-container:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: $dark_color;
+  opacity: 0.5;
+  display: block;
+  position: absolute;
+}
+
+.header-text {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  @include flexbox(column, center, center);
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  color: $light_color;
+
+  p:first-child {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  p:nth-child(2) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  input {
+    margin-top: 6vh;
+  }
+}
