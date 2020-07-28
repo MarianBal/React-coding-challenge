@@ -1,0 +1,6 @@
+@import '../../resources/partials.scss';
+
+.error-container {
+  margin-top: 5vh;
+  @include flexbox(column, flex-start, center);
+}

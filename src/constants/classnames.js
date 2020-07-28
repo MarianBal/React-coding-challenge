@@ -9,5 +9,8 @@ export const classNames = {
     moviesContainer: 'movies-container',
     image: 'image',
     movieTitle: 'movie-title'
+  },
+  error: {
+    errorContainer: 'error-container'
   }
 };

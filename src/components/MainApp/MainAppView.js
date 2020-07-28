@@ -3,12 +3,13 @@ import React from 'react';
 import './mainapp.scss';
 import Header from '../Header';
 import MoviesContent from '../MoviesContent';
+import Error from '../Error';
 
 const MainAppView = ({ movies, error }) => {
   return (
     <>
       <Header />
-      {error ? <h1>Error</h1> : <MoviesContent movies={movies} />}
+      {error ? <Error /> : <MoviesContent movies={movies} />}
     </>
   );
 };
