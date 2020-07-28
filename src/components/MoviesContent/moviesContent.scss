@@ -1,0 +1,40 @@
+@import '../../resources/partials.scss';
+@import '../../resources/colors.scss';
+
+.movies-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  @include flexbox(row, flex-start, flex-start) flex-wrap: wrap;
+
+  .image {
+    width: 20%;
+    padding: 25px;
+    box-sizing: border-box;
+    @include flexbox(column, space-between, center) img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      -webkit-transition: -webkit-transform 1s ease-out;
+      -moz-transition: -moz-transform 1s ease-out;
+      -o-transition: -o-transform 1s ease-out;
+      -ms-transition: -ms-transform 1s ease-out;
+      transition: transform 1s ease-out;
+    }
+
+    img:hover {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    .movie-title {
+      font-size: 14px;
+      color: $font_color;
+      margin-top: 15px;
+      text-transform: capitalize;
+    }
+  }
+}

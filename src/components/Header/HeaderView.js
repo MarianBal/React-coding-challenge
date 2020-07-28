@@ -4,7 +4,7 @@ import { classNames } from '../../constants/classnames';
 import { translations } from '../../constants/tranlations';
 import './header.scss';
 
-const { headerContainer, headerTextContainer } = classNames.header;
+const { headerContainer, headerTextContainer, inputType } = classNames.header;
 const { title, secondaryText, placeholderText } = translations.header;
 
 const HeaderView = () => {
@@ -13,7 +13,7 @@ const HeaderView = () => {
       <div className={headerTextContainer}>
         <p>{title}</p>
         <p>{secondaryText}</p>
-        <input type='text' placeholder={placeholderText} />
+        <input type={inputType} placeholder={placeholderText} />
       </div>
     </div>
   );
