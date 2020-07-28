@@ -5,10 +5,10 @@ import Header from '../Header';
 import MoviesContent from '../MoviesContent';
 import Error from '../Error';
 
-const MainAppView = ({ movies, error }) => {
+const MainAppView = ({ movies, error, handleSearch, getSearch }) => {
   return (
     <>
-      <Header />
+      <Header handleSearch={handleSearch} getSearch={getSearch} />
       {error ? <Error /> : <MoviesContent movies={movies} />}
     </>
   );

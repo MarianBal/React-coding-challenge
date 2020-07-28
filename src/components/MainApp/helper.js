@@ -5,3 +5,9 @@ export const getMovies = async (moviesSetter, errorSetter) => {
   if (response.data) moviesSetter(response.data.results);
   else errorSetter(true);
 };
+
+export const getSearch = value => event => {
+  if (event.key === 'Enter') {
+    console.log(value);
+  }
+};
