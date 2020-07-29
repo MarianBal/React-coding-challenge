@@ -2,18 +2,21 @@ import React from 'react';
 
 import './modal.scss';
 import { classNames } from '../../constants/classnames';
+import { imagePath } from '../../constants/url';
 
-const { modalBackground, modalContainer } = classNames.modal;
+const { modalBackground, modalContainer, modalHeader } = classNames.modal;
 
 const ModalView = ({ modalData }) => {
   return (
     <div className={modalBackground}>
       <div className={modalContainer}>
-        {/* <div
-        className='modalEncabezado'
-        style='background-image: url(${dire}${movie.backdrop_path})'
-      ></div>
-      <div className='modalInformacion'></div>
+        <div
+          className={modalHeader}
+          style={{
+            backgroundImage: `url(${imagePath}${modalData.backdrop_path})`
+          }}
+        ></div>
+        {/* <div className='modalInformacion'></div>
       <div className='contenedorModalInfo'>
         <div className='modalPoster'>
           <img src='${dire}${movie.poster_path}' />

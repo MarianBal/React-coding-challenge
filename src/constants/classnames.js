@@ -23,6 +23,7 @@ export const classNames = {
   },
   modal: {
     modalBackground: 'modal-background',
-    modalContainer: 'modal-container'
+    modalContainer: 'modal-container',
+    modalHeader: 'modal-header'
   }
 };
