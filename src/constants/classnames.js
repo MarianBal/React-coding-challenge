@@ -20,5 +20,9 @@ export const classNames = {
     starClass: 'star',
     activeStar: '#ffc107',
     disablestar: '#e4e5e9'
+  },
+  modal: {
+    modalBackground: 'modal-background',
+    modalContainer: 'modal-container'
   }
 };

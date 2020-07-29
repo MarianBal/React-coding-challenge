@@ -9,9 +9,24 @@ if (window._CONFIG_) {
 const moviesApi = apiURLConstructor(baseUrl);
 
 export const getMovies = () => () => {
-  return fetch(moviesApi(`${endpoints.discoverMovies}`), getSettings());
+  return fetch(
+    moviesApi(`${endpoints.discoverMovies}${endpoints.token}`),
+    getSettings()
+  );
 };
 
 export const searchMovies = movie => () => {
-  return fetch(moviesApi(`${endpoints.searchMovies}${movie}`), getSettings());
+  return fetch(
+    moviesApi(
+      `${endpoints.searchMovies}${endpoints.token}${endpoints.query}${movie}`
+    ),
+    getSettings()
+  );
+};
+
+export const searchMovieById = data => () => {
+  return fetch(
+    moviesApi(`${endpoints.searchMovie}${data}${endpoints.token}`),
+    getSettings()
+  );
 };
