@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getMovies, getSearch, dataSetter } from './helper';
+import { getMovies, getSearch } from './helper';
 import MainAppView from './MainAppView';
 import { handleEvent } from '../../utils/handleSetter';
 
@@ -19,7 +19,7 @@ const MainAppWrapper = () => {
       movies={searchedMovies.length ? searchedMovies : movies}
       error={error}
       handleSearch={handleEvent(setSearch)}
-      getSearch={getSearch(search, setSearchedMovies)}
+      getSearch={getSearch(search, setSearchedMovies, setSearch)}
     />
   );
 };
