@@ -11,3 +11,7 @@ const moviesApi = apiURLConstructor(baseUrl);
 export const getMovies = () => () => {
   return fetch(moviesApi(`${endpoints.discoverMovies}`), getSettings());
 };
+
+export const searchMovies = movie => () => {
+  return fetch(moviesApi(`${endpoints.searchMovies}${movie}`), getSettings());
+};
