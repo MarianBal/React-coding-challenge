@@ -8,13 +8,11 @@ const { moviesContainer, image, movieTitle } = classNames.moviesContainer;
 
 const MoviesContentView = ({ movies }) => (
   <div className={moviesContainer}>
-    {movies.map(movie => (
-      <>
-        <div className={image}>
-          <img src={`${imagePath}${movie.poster_path}`} alt={movie.title} />
-          <div className={movieTitle}>{movie.title}</div>
-        </div>
-      </>
+    {movies.map((movie, index) => (
+      <div className={image} key={index}>
+        <img src={`${imagePath}${movie.poster_path}`} alt={movie.title} />
+        <div className={movieTitle}>{movie.title}</div>
+      </div>
     ))}
   </div>
 );

@@ -5,5 +5,6 @@ export const token = '?api_key=8bdfee1cadeaa7c6f8c489f17f927c3d';
 export const imagePath = `https://image.tmdb.org/t/p/original`;
 
 export const endpoints = {
-  discoverMovies: `/discover/movie${token}`
+  discoverMovies: `/discover/movie${token}`,
+  searchMovies: `/search/movie${token}&query=`
 };
