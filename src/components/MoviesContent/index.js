@@ -1,2 +1,2 @@
-import MoviesContentView from './MoviesContentView';
-export default MoviesContentView;
+import MoviesContentWrapper from './MoviesContentWrapper';
+export default MoviesContentWrapper;

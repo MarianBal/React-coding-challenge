@@ -9,5 +9,8 @@ export const translations = {
   },
   error: {
     errorText: 'Ha ocurrido un error'
+  },
+  starRating: {
+    rating: 'Rating: '
   }
 };

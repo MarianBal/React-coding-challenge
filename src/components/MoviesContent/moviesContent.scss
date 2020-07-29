@@ -4,14 +4,15 @@
 .movies-container {
   width: 90%;
   margin: 0 auto;
-  padding-top: 20px;
   @include flexbox(row, flex-start, flex-start) flex-wrap: wrap;
 
   .image {
     width: 20%;
     padding: 25px;
     box-sizing: border-box;
-    @include flexbox(column, space-between, center) img {
+    @include flexbox(column, space-between, center);
+
+    img {
       width: 100%;
       height: auto;
       cursor: pointer;
