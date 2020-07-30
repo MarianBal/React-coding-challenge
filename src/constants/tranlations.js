@@ -9,5 +9,12 @@ export const translations = {
   },
   error: {
     errorText: 'Ha ocurrido un error'
+  },
+  starRating: {
+    rating: 'Rating: '
+  },
+  modal: {
+    genreText: 'Genre',
+    releaseDate: 'release date'
   }
 };

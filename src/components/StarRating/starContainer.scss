@@ -1,0 +1,29 @@
+@import '../../resources/partials.scss';
+@import '../../resources/fonts.scss';
+@import '../../resources/colors.scss';
+
+.star-container {
+  width: 90%;
+  height: 8vh;
+  margin: 0 auto;
+  @include flexbox(row, flex-end, center);
+
+  span {
+    font-family: $principal_font;
+    color: $font_color;
+    font-size: 14px;
+  }
+
+  label {
+    margin-left: 4px;
+
+    input[type='radio'] {
+      display: none;
+    }
+
+    .star {
+      cursor: pointer;
+      transition: color 200ms;
+    }
+  }
+}
