@@ -19,7 +19,8 @@ const MainAppWrapper = () => {
       movies={searchedMovies.length ? searchedMovies : movies}
       error={error}
       handleSearch={handleEvent(setSearch)}
-      getSearch={getSearch(search, setSearchedMovies)}
+      getSearch={getSearch(search, setSearchedMovies, setSearch)}
+      search={search}
     />
   );
 };

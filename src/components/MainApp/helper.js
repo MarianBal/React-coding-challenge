@@ -6,9 +6,11 @@ export const getMovies = async (moviesSetter, errorSetter) => {
   else errorSetter(true);
 };
 
-export const getSearch = (value, valueSetter) => event => {
-  if (event.key === 'Enter' && value.length) searchMovie(value, valueSetter);
-  else valueSetter([]);
+export const getSearch = (value, valueSetter, searchSetter) => event => {
+  if (event.key === 'Enter' && value.length) {
+    searchMovie(value, valueSetter);
+    searchSetter('');
+  } else valueSetter([]);
 };
 
 const searchMovie = async (value, valueSetter) => {

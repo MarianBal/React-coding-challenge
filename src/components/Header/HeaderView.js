@@ -7,7 +7,7 @@ import './header.scss';
 const { headerContainer, headerTextContainer, inputType } = classNames.header;
 const { title, secondaryText, placeholderText } = translations.header;
 
-const HeaderView = ({ handleSearch, getSearch }) => {
+const HeaderView = ({ handleSearch, getSearch, search }) => {
   return (
     <div className={headerContainer}>
       <div className={headerTextContainer}>
@@ -16,6 +16,7 @@ const HeaderView = ({ handleSearch, getSearch }) => {
         <input
           type={inputType}
           placeholder={placeholderText}
+          value={search}
           onChange={handleSearch}
           onKeyPress={getSearch}
         />

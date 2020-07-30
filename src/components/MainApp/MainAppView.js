@@ -5,9 +5,9 @@ import Header from '../Header';
 import MoviesContent from '../MoviesContent';
 import Error from '../Error';
 
-const MainAppView = ({ movies, error, search, handleSearch, getSearch }) => (
+const MainAppView = ({ movies, error, handleSearch, getSearch, search }) => (
   <>
-    <Header handleSearch={handleSearch} getSearch={getSearch} />
+    <Header handleSearch={handleSearch} getSearch={getSearch} search={search} />
     {error ? <Error /> : <MoviesContent movies={movies} />}
   </>
 );
