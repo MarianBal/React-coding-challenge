@@ -1,4 +1,6 @@
 @import '../../resources/colors.scss';
+@import '../../resources/partials.scss';
+@import '../../resources/fonts.scss';
 
 .modal-background {
   width: 100%;
@@ -18,6 +20,8 @@
     background-color: $light_color;
     margin: 40px auto;
     opacity: 1;
+    font-family: $principal_font;
+    color: $font_color;
 
     .modal-header {
       height: 350px;
@@ -38,6 +42,92 @@
       height: 100%;
       background: $light_color;
       opacity: 0.75;
+    }
+
+    .modal-info {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      @include flexbox(row, center, center);
+
+      .modal-poster {
+        width: 50%;
+        height: 100%;
+        @include flexbox(row, center, flex-start);
+
+        img {
+          width: 300px;
+          margin-top: 40px;
+        }
+      }
+      .movie-info {
+        width: 50%;
+        height: 60%;
+        padding-right: 30px;
+        box-sizing: border-box;
+        @include flexbox(column, flex-start, flex-start);
+
+        h4 {
+          font-size: 30px;
+          font-weight: 500;
+          line-height: 1.4;
+          margin: 0;
+        }
+
+        p {
+          font-size: 14px;
+          font-weight: 300;
+          margin-top: 10px;
+        }
+        .more-info {
+          position: absolute;
+          top: 358px;
+          padding-right: 30px;
+          //box-sizing: border-box;
+
+          span {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.8;
+
+            padding-right: 40px;
+          }
+
+          h5 {
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 16px;
+            color: $dark_color;
+          }
+
+          p {
+            margin-top: 5px;
+          }
+
+          .genres-info {
+            @include flexbox(row, flex-start, flex-start);
+
+            p {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .close {
+      width: 40px;
+      height: 40px;
+      @include flexbox(row, center, center);
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
     }
   }
 }

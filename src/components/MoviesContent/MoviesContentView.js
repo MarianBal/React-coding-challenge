@@ -13,23 +13,31 @@ const MoviesContentView = ({
   handleRating,
   rating,
   modalData,
-  handleMovie
+  handleMovie,
+  closeModal
 }) => (
   <>
-    <StarRating handleRating={handleRating} rating={rating} />
-    <div className={moviesContainer}>
-      {movies.map((movie, index) => (
-        <div
-          className={image}
-          key={index}
-          onClick={() => handleMovie(movie.id)}
-        >
-          <img src={`${imagePath}${movie.poster_path}`} alt={movie.title} />
-          <div className={movieTitle}>{movie.title}</div>
+    {!modalData && (
+      <>
+        <StarRating handleRating={handleRating} rating={rating} />
+        <div className={moviesContainer}>
+          {movies.map((movie, index) => (
+            <div
+              className={image}
+              key={index}
+              onClick={() => handleMovie(movie.id)}
+            >
+              <img src={`${imagePath}${movie.poster_path}`} alt={movie.title} />
+              <div className={movieTitle}>{movie.title}</div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-    {modalData !== null && <Modal modalData={modalData} />}
+      </>
+    )}
+
+    {modalData !== null && (
+      <Modal modalData={modalData} closeModal={closeModal} />
+    )}
   </>
 );
 

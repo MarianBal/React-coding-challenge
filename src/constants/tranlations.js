@@ -12,5 +12,9 @@ export const translations = {
   },
   starRating: {
     rating: 'Rating: '
+  },
+  modal: {
+    genreText: 'Genre',
+    releaseDate: 'release date'
   }
 };

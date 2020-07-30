@@ -24,6 +24,12 @@ export const classNames = {
   modal: {
     modalBackground: 'modal-background',
     modalContainer: 'modal-container',
-    modalHeader: 'modal-header'
+    modalHeader: 'modal-header',
+    modalInfo: 'modal-info',
+    modalPoster: 'modal-poster',
+    movieInfo: 'movie-info',
+    moreInfo: 'more-info',
+    genresInfo: 'genres-info',
+    close: 'close'
   }
 };

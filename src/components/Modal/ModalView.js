@@ -1,12 +1,26 @@
 import React from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 import './modal.scss';
 import { classNames } from '../../constants/classnames';
+import { translations } from '../../constants/tranlations';
 import { imagePath } from '../../constants/url';
 
-const { modalBackground, modalContainer, modalHeader } = classNames.modal;
+const {
+  modalBackground,
+  modalContainer,
+  modalHeader,
+  modalInfo,
+  modalPoster,
+  movieInfo,
+  moreInfo,
+  genresInfo,
+  close
+} = classNames.modal;
 
-const ModalView = ({ modalData }) => {
+const { genreText, releaseDate } = translations.modal;
+
+const ModalView = ({ modalData, closeModal }) => {
   return (
     <div className={modalBackground}>
       <div className={modalContainer}>
@@ -15,46 +29,33 @@ const ModalView = ({ modalData }) => {
           style={{
             backgroundImage: `url(${imagePath}${modalData.backdrop_path})`
           }}
-        ></div>
-        {/* <div className='modalInformacion'></div>
-      <div className='contenedorModalInfo'>
-        <div className='modalPoster'>
-          <img src='${dire}${movie.poster_path}' />
-        </div>
-        <div className='modalInformacionPeli'>
-          <h4>${movie.title}</h4>
-          <p>${movie.tagline}</p>
-          <div class='masInfo'>
-            <span>${movie.overview}</span>
-            <h5>genre</h5>
-            <p>${genres}</p>
-            <h5> release date</h5>
-            <p>${movie.release_date}</p>
+        />
+        <div className={modalInfo}>
+          <div className={modalPoster}>
+            <img
+              src={`${imagePath}${modalData.poster_path}`}
+              alt={modalData.title}
+            />
+          </div>
+          <div className={movieInfo}>
+            <h4>{modalData.title}</h4>
+            <p>{modalData.tagline}</p>
+            <div className={moreInfo}>
+              <span>{modalData.overview.substring(0, 480)}</span>
+              <h5>{genreText}</h5>
+              <div className={genresInfo}>
+                {modalData.genres.map(genre => (
+                  <p key={genre.name}>{genre.name} </p>
+                ))}
+              </div>
+              <h5>{releaseDate}</h5>
+              <p>{modalData.release_date}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class='cerrar' onclick='cerrarModal()'>
-        <svg
-          aria-hidden='true'
-          focusable='false'
-          data-prefix='fas'
-          data-icon='times'
-          class='svg-inline--fa fa-times fa-w-11'
-          role='img'
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 352 512'
-        >
-          <path
-            fill='currentColor'
-            d='M242.72 256l100.07-100.07c12.28-12.28
-      12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28
-      75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19
-       0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28
-       12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48
-       0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z'
-          ></path>
-        </svg>
-      </div> */}
+        <div className={close} onClick={closeModal}>
+          <FaTimes />
+        </div>
       </div>
     </div>
   );
